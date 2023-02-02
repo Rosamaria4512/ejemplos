@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div>
+            Identificacion<br>
+            <input type="text" id="txtid" value=""><br>
+            Nombre<br>
+            <input type="text" id="txtnombre" value=""><br> <p>     
+            fecha de nacimiento <br>
+            <input type="date" id="date" value=""><br>  <p>
+             <button type="" id="btn" onclick="dato(document.querySelector('p').value)">CODIGO 1</button>
+             <button type="" id="btn" onclick="dato1(document.querySelector('p').value)">CODIGO 2</button>  
+
+            <p id="p"></p>
+            <p id="p1"></p>
+       </di>
+    <script>
+
+
+// function dato(){
+
+// var id = document.querySelector('#txtid').value;
+// var nombre = document.querySelector('#txtnombre').value;
+// 
+
+
+// btn.addEventListener('click',() =>{
+//     document.querySelector('#p').innerHTML= id+"  "+nombre;
+//     // console.log('evento 4')
+
+
+// )};
+
+function dato(){
+
+ let dg= informacion(nombre,id,fecha);
+ //  alert("sus datos: " + dg)
+   document.querySelector('#p').innerHTML="Todos sus datos"+"  "+dg;
+
+}
+        function informacion(nombre,id,fecha){
+        let nombres = document.querySelector("#txtnombre").value
+        let identificacion = document.querySelector("#txtid").value
+        let fecha_nacimiento = document.querySelector("#date").value
+        var infonombre = nombre(nombres);
+        var infoid = id(identificacion);
+        var infofecha =fecha(fecha_nacimiento);
+    let dts = infonombre+infoid+infofecha
+    // "alert("sus datos: " + dts );
+    return "a continuacion:"+dts;
+ }
+
+function nombre(nombres){
+// alert(nombres);
+let d1 =nombres;
+    return d1;
+  }
+ function id(identificacion){
+//    alert(identificacion);
+  let d2 = identificacion;
+  return identificacion;
+  
+}
+function fecha(fecha_nacimiento){
+   //    alert(fecha_nacimiento);
+   let d3 = fecha_nacimiento;
+  return fecha_nacimiento;
+}
+
+
+//dos
+
+function dato1(){
+  setTimeout(function(){
+    var respuesta = obtenerResultados(n, i,f);
+    document.querySelector('#p').innerHTML="sus Datos generales "+respuesta;
+  },5000);
+}
+function n(nombres){
+    return nombres;
+}
+function i(identificacion){
+    return identificacion;
+}
+function f(fecha_nacimiento){
+    return fecha_nacimiento;
+}
+
+function obtenerResultados(){
+        let inf = document.querySelector("#txtnombre","#txtid","#date").value
+        let identificacion = document.querySelector("#txtid").value
+        let fecha_nacimiento = document.querySelector("#date").value
+        let g = inf+identificacion+fecha_nacimiento
+        return "son estos:" +"  "+g; 
+}
+
+    </script>
+    </body>
+</html>
